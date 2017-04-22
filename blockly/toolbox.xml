@@ -1,0 +1,40 @@
+<category id="catWS2812" tags="mark1,fly,smart">
+  <block type="variables_set">
+    <field name="VAR">ws2812</field>
+    <value name="VALUE">
+      <block type="ws2812_new">
+        <field name="pin">10</field>
+      </block>
+    </value>
+  </block>
+  <block type="ws2812_print">
+    <value name="led">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="r">
+      <block type="math_number">
+        <field name="NUM">64</field>
+      </block>
+    </value>
+    <value name="g">
+      <block type="math_number">
+        <field name="NUM">64</field>
+      </block>
+    </value>
+    <value name="b">
+      <block type="math_number">
+        <field name="NUM">64</field>
+      </block>
+    </value>
+  </block>
+  <block type="ws2812_brightness">
+    <value name="brightness">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="ws2812_clear"></block>
+</category>
