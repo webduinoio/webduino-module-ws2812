@@ -63,6 +63,7 @@
     }
     cmd.push(0xF7);
     this._board.send(cmd);
+    this._board.flush();
   }
 
   proto.clear = function () {
@@ -74,11 +75,12 @@
     this._board.send([0xF0, 0x04, 0x21, 0x01,
       data.charCodeAt(0), data.charCodeAt(1), 0xF7
     ]);
+    this._board.flush();
   }
 
   function toHex(num) {
     var str = num.toString(16);
-    if (num < 10) {
+    if (parseInt(num) < 16) {
       str = '0' + str;
     }
     return str;
