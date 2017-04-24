@@ -48,11 +48,16 @@
   });
 
   proto.print = function (led, r, g, b) {
-    var cmd = [0xF0, 0x04, 0x21, 0x03, led];
     var data = '';
-    data = data.concat(toHex(r));
-    data = data.concat(toHex(g));
-    data = data.concat(toHex(b));
+    var cmd = [0xF0, 0x04, 0x21, 0x03];
+    if (arguments.length == 1) {
+      data = led;
+    } else {
+      data = data.concat(toHex(led));
+      data = data.concat(toHex(r));
+      data = data.concat(toHex(g));
+      data = data.concat(toHex(b));
+    }
     for (var i = 0; i < data.length; i++) {
       cmd.push(data.charCodeAt(i))
     }

@@ -14,6 +14,22 @@ Blockly.Blocks['ws2812_new'] = {
   }
 };
 
+//https://blockly-demo.appspot.com/static/demos/blockfactory_old/index.html#co6db6
+Blockly.Blocks['ws2812_data'] = {
+  init: function() {
+    this.appendValueInput("data")
+        .setCheck(null)
+        .appendField("設定")
+        .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
+        .appendField("顯示");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(65);
+    this.setTooltip('');
+    this.setHelpUrl('https://webduino.io');
+  }
+};
+
 //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#29h8uv
 Blockly.Blocks['ws2812_print'] = {
   init: function() {

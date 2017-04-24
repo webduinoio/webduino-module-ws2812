@@ -5,6 +5,13 @@ Blockly.JavaScript['ws2812_new'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['ws2812_data'] = function(block) {
+  var variable_ws2812 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('ws2812'), Blockly.Variables.NAME_TYPE);
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = variable_ws2812 + '.print(' + value_data + ');\n';
+  return code;
+};
+
 Blockly.JavaScript['ws2812_print'] = function (block) {
   var variable_ws2812 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('ws2812'), Blockly.Variables.NAME_TYPE);
   var value_led = Blockly.JavaScript.valueToCode(block, 'led', Blockly.JavaScript.ORDER_ATOMIC);
