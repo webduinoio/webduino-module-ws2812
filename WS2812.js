@@ -11,7 +11,6 @@
   var proto;
   var sendLength = 50;
   var sendArray = [];
-  var sending = false;
   var sendAck = '';
   var sendCallback;
   var Module = scope.Module;
@@ -28,9 +27,7 @@
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
         var m = event.message;
-        sending = false;
       });
-    startQueue(board);
   }
 
   WS2812.prototype = proto = Object.create(Module.prototype, {
@@ -64,6 +61,7 @@
     cmd.push(0xF7);
     this._board.send(cmd);
     this._board.flush();
+    console.log("flush");
   }
 
   proto.clear = function () {
@@ -84,23 +82,6 @@
       str = '0' + str;
     }
     return str;
-  }
-
-  function startQueue(board) {
-    setInterval(function () {
-      if (sending || sendArray.length == 0) {
-        return;
-      }
-      sending = true;
-      var sendObj = sendArray.shift();
-      sendAck = sendObj.ack;
-      if (sendAck > 0) {
-        board.send(sendObj.obj);
-      } else {
-        sending = false;
-        sendCallback();
-      }
-    }, 0);
   }
 
   scope.module.WS2812 = WS2812;

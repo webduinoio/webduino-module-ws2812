@@ -3,9 +3,27 @@ Blockly.Blocks['ws2812_new'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("全彩點距陣，腳位")
-        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"], ["13","13"], ["14","14"]]), "pin")
+        .appendField(new Blockly.FieldDropdown([
+            ["0","0"], 
+            ["1","1"], 
+            ["2","2"], 
+            ["3","3"], 
+            ["4","4"], 
+            ["5","5"], 
+            ["6","6"], 
+            ["7","7"], 
+            ["8","8"], 
+            ["9","9"], 
+            ["10","10"], 
+            ["11","11"], 
+            ["12","12"], 
+            ["13","13"], 
+            ["14","14"],
+            ["15","15"], 
+            ["16","16"]
+            ]), "pin")
         .appendField("，LED數量")
-        .appendField(new Blockly.FieldTextInput('16'), "leds")
+        .appendField(new Blockly.FieldTextInput('7'), "leds")
         .appendField("顆");
     this.setOutput(true, null);
     this.setColour(230);
