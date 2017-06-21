@@ -70,9 +70,7 @@
 
   proto.brightness = function (b) {
     var data = toHex(b);
-    this._board.send([0xF0, 0x04, 0x21, 0x01,
-      data.charCodeAt(0), data.charCodeAt(1), 0xF7
-    ]);
+    this._board.send([0xF0, 0x04, 0x21, 0x01, b, 0xF7]);
     this._board.flush();
   }
 

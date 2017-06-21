@@ -97,7 +97,7 @@ Blockly.Blocks['ws2812_brightness'] = {
         .setCheck("Number")
         .appendField("設定")
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
-        .appendField("亮度 (0~255) ");
+        .appendField("亮度 (0~127) ");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
