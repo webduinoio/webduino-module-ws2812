@@ -61,7 +61,6 @@
     cmd.push(0xF7);
     this._board.send(cmd);
     this._board.flush();
-    console.log("flush");
   }
 
   proto.clear = function () {
