@@ -2,7 +2,7 @@
 Blockly.Blocks['ws2812_new'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("全彩點距陣，腳位")
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_PIN)
         .appendField(new Blockly.FieldDropdown([
             ["0","0"], 
             ["1","1"], 
@@ -22,9 +22,9 @@ Blockly.Blocks['ws2812_new'] = {
             ["15","15"], 
             ["16","16"]
             ]), "pin")
-        .appendField("，LED數量")
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED)
         .appendField(new Blockly.FieldTextInput('7'), "leds")
-        .appendField("顆");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_UNIT);
     this.setOutput(true, null);
     this.setColour(230);
     this.setTooltip('');
@@ -37,9 +37,9 @@ Blockly.Blocks['ws2812_data'] = {
   init: function() {
     this.appendValueInput("data")
         .setCheck(null)
-        .appendField("設定")
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_SET)
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
-        .appendField("顯示");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_DISPLAY);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(65);
@@ -53,18 +53,19 @@ Blockly.Blocks['ws2812_print'] = {
   init: function() {
     this.appendValueInput("led")
         .setCheck("Number")
-        .appendField("設定")
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_SET)
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
-        .appendField("第");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_NUMBER);
     this.appendValueInput("r")
         .setCheck("Number")
-        .appendField("顆，紅色");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_UNIT)
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_RED);
     this.appendValueInput("g")
         .setCheck("Number")
-        .appendField("，綠色");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_GREEN);
     this.appendValueInput("b")
         .setCheck("Number")
-        .appendField("，藍色");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_BLUE);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -80,7 +81,7 @@ Blockly.Blocks['ws2812_clear'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
-        .appendField("清除LED顯示");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_CLEAR);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(65);
@@ -95,9 +96,9 @@ Blockly.Blocks['ws2812_brightness'] = {
   init: function() {
     this.appendValueInput("brightness")
         .setCheck("Number")
-        .appendField("設定")
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_SET)
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
-        .appendField("亮度 (0~127) ");
+        .appendField(Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

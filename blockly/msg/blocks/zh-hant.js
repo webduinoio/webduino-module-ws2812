@@ -1,7 +1,12 @@
-// LCD1602
-Blockly.Msg.WEBDUINO_LCD1602 = "LCD (1602)，SDA ";
-Blockly.Msg.WEBDUINO_LCD1602_SCL = "  SCL";
-Blockly.Msg.WEBDUINO_LCD1602_PRINT = "LCD 顯示:";
-Blockly.Msg.WEBDUINO_LCD1602_CLEAR = "清除 LCD 螢幕";
-Blockly.Msg.WEBDUINO_LCD1602_LOCATE_X = "LCD 設定列:";
-Blockly.Msg.WEBDUINO_LCD1602_LOCATE_Y = "LCD 設定欄:";
+// WS2812
+Blockly.Msg.WEBDUINO_WS2812_PIN = "全彩點距陣，腳位";
+Blockly.Msg.WEBDUINO_WS2812_LED = "，LED數量";
+Blockly.Msg.WEBDUINO_WS2812_LED_UNIT = "顆";
+Blockly.Msg.WEBDUINO_WS2812_LED_SET = "設定";
+Blockly.Msg.WEBDUINO_WS2812_LED_NUMBER = "第";
+Blockly.Msg.WEBDUINO_WS2812_RED = "紅色";
+Blockly.Msg.WEBDUINO_WS2812_GREEN = "綠色";
+Blockly.Msg.WEBDUINO_WS2812_BLUE = "藍色";
+Blockly.Msg.WEBDUINO_WS2812_DISPLAY = "顯示";
+Blockly.Msg.WEBDUINO_WS2812_CLEAR = "清除LED顯示";
+Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS = "亮度 (0~127) "
