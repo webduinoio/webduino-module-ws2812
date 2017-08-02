@@ -9,4 +9,5 @@ Blockly.Msg.WEBDUINO_WS2812_GREEN = "绿色";
 Blockly.Msg.WEBDUINO_WS2812_BLUE = "蓝色";
 Blockly.Msg.WEBDUINO_WS2812_DISPLAY = "显示";
 Blockly.Msg.WEBDUINO_WS2812_CLEAR = "清除LED显示";
-Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS = "亮度 (0~127) "
+Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS = "设定亮度 (0~127)";
+Blockly.Msg.WEBDUINO_WS2812_CLOSE = "关闭";

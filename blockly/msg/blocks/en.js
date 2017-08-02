@@ -9,4 +9,5 @@ Blockly.Msg.WEBDUINO_WS2812_GREEN = "Green";
 Blockly.Msg.WEBDUINO_WS2812_BLUE = "Blue";
 Blockly.Msg.WEBDUINO_WS2812_DISPLAY = "Display";
 Blockly.Msg.WEBDUINO_WS2812_CLEAR = "Clear LED display";
-Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS = "Brightness (0~127) "
+Blockly.Msg.WEBDUINO_WS2812_BRIGHTBESS = "Brightness (0~127)";
+Blockly.Msg.WEBDUINO_WS2812_CLOSE = "Close";
