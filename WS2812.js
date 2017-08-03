@@ -63,7 +63,7 @@
     this._board.flush();
   }
 
-  proto.clear = function () {
+  proto.off = function () {
     this._board.send([0xF0, 0x04, 0x21, 0x02, 0xF7]);
   }
 

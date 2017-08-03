@@ -76,7 +76,7 @@ Blockly.Blocks['ws2812_print'] = {
 
 
 //https://blockly-demo.appspot.com/static/demos/blockfactory_old/index.html#5pnrkk
-Blockly.Blocks['ws2812_clear'] = {
+Blockly.Blocks['ws2812_off'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(Blockly.Msg.WEBDUINO_WS2812_CLOSE,"關閉")
