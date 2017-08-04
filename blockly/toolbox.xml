@@ -43,5 +43,5 @@
       </block>
     </value>
   </block>
-  <block type="ws2812_clear"></block>
+  <block type="ws2812_off"></block>
 </category>

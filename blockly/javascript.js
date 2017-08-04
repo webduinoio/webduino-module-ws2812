@@ -22,9 +22,9 @@ Blockly.JavaScript['ws2812_print'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['ws2812_clear'] = function (block) {
+Blockly.JavaScript['ws2812_off'] = function (block) {
   var variable_ws2812 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('ws2812'), Blockly.Variables.NAME_TYPE);
-  var code = variable_ws2812 + '.clear();\n';
+  var code = variable_ws2812 + '.off();\n';
   return code;
 };
 
