@@ -1,6 +1,6 @@
 //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#ji8gno
 var mainUrl = 'https://tutorials.webduino.io/zh-tw/docs/';
-var utmUrl = '?utm_source=cloud-blockly&utm_campaign=help_url';
+var utmUrl = '?utm_source=cloud-blockly&utm_medium=contextMenu&utm_campaign=tutorials';
 
 Blockly.Blocks['ws2812_new'] = {
   init: function() {
