@@ -1,4 +1,7 @@
 //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#ji8gno
+var mainUrl = 'https://tutorials.webduino.io/zh-tw/docs/';
+var utmUrl = '?utm_source=cloud-blockly&utm_campaign=help_url';
+
 Blockly.Blocks['ws2812_new'] = {
   init: function() {
     this.appendDummyInput()
@@ -28,7 +31,7 @@ Blockly.Blocks['ws2812_new'] = {
     this.setOutput(true, null);
     this.setColour(230);
     this.setTooltip('');
-    this.setHelpUrl('https://webduino.io');
+    this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl); 
   }
 };
 
@@ -43,7 +46,7 @@ Blockly.Blocks['ws2812_data'] = {
     this.setNextStatement(true, null);
     this.setColour(65);
     this.setTooltip('');
-    this.setHelpUrl('https://webduino.io');
+    this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl); 
   }
 };
 
@@ -70,7 +73,7 @@ Blockly.Blocks['ws2812_print'] = {
     this.setNextStatement(true, null);
     this.setColour(65);
     this.setTooltip('');
-    this.setHelpUrl('https://webduino.io');
+    this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl); 
   }
 };
 
@@ -85,7 +88,7 @@ Blockly.Blocks['ws2812_clear'] = {
     this.setNextStatement(true, null);
     this.setColour(65);
     this.setTooltip('');
-    this.setHelpUrl('https://webduino.io');
+    this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl); 
   }
 };
 
@@ -102,6 +105,6 @@ Blockly.Blocks['ws2812_brightness'] = {
     this.setNextStatement(true, null);
     this.setColour(65);
     this.setTooltip('');
-    this.setHelpUrl('https://webduino.io');
+    this.setHelpUrl(mainUrl + 'basic/index.html' + utmUrl); 
   }
 };
