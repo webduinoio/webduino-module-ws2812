@@ -11,7 +11,6 @@
   var proto;
   var sendLength = 50;
   var sendArray = [];
-  var sending = false;
   var sendAck = '';
   var sendCallback;
   var Module = scope.Module;
@@ -28,9 +27,7 @@
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
         var m = event.message;
-        sending = false;
       });
-    startQueue(board);
   }
 
   WS2812.prototype = proto = Object.create(Module.prototype, {
@@ -47,53 +44,39 @@
     }
   });
 
-  proto.print = function (led, r, g, b) {
-    var cmd = [0xF0, 0x04, 0x21, 0x03, led];
+  proto.setColor = function (led, color) {
     var data = '';
-    data = data.concat(toHex(r));
-    data = data.concat(toHex(g));
-    data = data.concat(toHex(b));
+    var cmd = [0xF0, 0x04, 0x21, 0x03];
+    if (arguments.length == 1) {
+      data = led;
+    } else {
+      data = data.concat(toHex(led));
+      data = data.concat(color.substring(1));
+    }
     for (var i = 0; i < data.length; i++) {
       cmd.push(data.charCodeAt(i))
     }
     cmd.push(0xF7);
     this._board.send(cmd);
+    this._board.flush();
   }
 
-  proto.clear = function () {
+  proto.off = function () {
     this._board.send([0xF0, 0x04, 0x21, 0x02, 0xF7]);
   }
 
   proto.brightness = function (b) {
     var data = toHex(b);
-    this._board.send([0xF0, 0x04, 0x21, 0x01,
-      data.charCodeAt(0), data.charCodeAt(1), 0xF7
-    ]);
+    this._board.send([0xF0, 0x04, 0x21, 0x01, b, 0xF7]);
+    this._board.flush();
   }
 
   function toHex(num) {
     var str = num.toString(16);
-    if (num < 10) {
+    if (parseInt(num) < 16) {
       str = '0' + str;
     }
     return str;
-  }
-
-  function startQueue(board) {
-    setInterval(function () {
-      if (sending || sendArray.length == 0) {
-        return;
-      }
-      sending = true;
-      var sendObj = sendArray.shift();
-      sendAck = sendObj.ack;
-      if (sendAck > 0) {
-        board.send(sendObj.obj);
-      } else {
-        sending = false;
-        sendCallback();
-      }
-    }, 0);
   }
 
   scope.module.WS2812 = WS2812;
