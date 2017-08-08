@@ -44,16 +44,14 @@
     }
   });
 
-  proto.print = function (led, r, g, b) {
+  proto.setColor = function (led, color) {
     var data = '';
     var cmd = [0xF0, 0x04, 0x21, 0x03];
     if (arguments.length == 1) {
       data = led;
     } else {
       data = data.concat(toHex(led));
-      data = data.concat(toHex(r));
-      data = data.concat(toHex(g));
-      data = data.concat(toHex(b));
+      data = data.concat(color.substring(1));
     }
     for (var i = 0; i < data.length; i++) {
       cmd.push(data.charCodeAt(i))
