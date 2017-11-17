@@ -1,4 +1,4 @@
-<category id="catWS2812" tags="mark1,fly,smart">
+<category id="catWS2812" tags="mark1,fly,smart" index="6">
   <block type="variables_set">
     <field name="VAR">ws2812</field>
     <value name="VALUE">
