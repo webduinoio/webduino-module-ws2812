@@ -13,20 +13,8 @@
         <field name="NUM">0</field>
       </block>
     </value>
-    <value name="r">
-      <block type="math_number">
-        <field name="NUM">64</field>
-      </block>
-    </value>
-    <value name="g">
-      <block type="math_number">
-        <field name="NUM">64</field>
-      </block>
-    </value>
-    <value name="b">
-      <block type="math_number">
-        <field name="NUM">64</field>
-      </block>
+    <value name="color">
+      <block type="colour_picker"></block>
     </value>
   </block>
   <block type="ws2812_data">
