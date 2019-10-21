@@ -52,7 +52,7 @@
     });
 
     proto.setColor = function(led, color) {
-        if (led > 64) {
+        if (typeof led === 'number' && led > 64) {
             this.setColor64(led, color);
             return;
         }
@@ -91,7 +91,6 @@
     }
 
     proto.brightness = function(b) {
-        var data = toHex(b);
         this._board.send([0xF0, 0x04, 0x21, 0x01, b, 0xF7]);
         this._board.flush();
     }
