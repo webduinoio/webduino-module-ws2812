@@ -15,7 +15,7 @@ Blockly.JavaScript['ws2812_data'] = function(block) {
 Blockly.JavaScript['ws2812_print'] = function (block) {
   var variable_ws2812 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('ws2812'), Blockly.Variables.NAME_TYPE);
   var value_led = Blockly.JavaScript.valueToCode(block, 'led', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_color = Blockly.JavaScript.valueToCode(block, 'color_', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
   var code = variable_ws2812 + '.setColor(' + value_led + ', ' + value_color + ');\n';
   return code;
 };

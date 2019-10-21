@@ -58,7 +58,7 @@ Blockly.Blocks['ws2812_print'] = {
         .appendField(new Blockly.FieldVariable("ws2812"), "ws2812")
         .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_SET)
         .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_NUMBER);
-    this.appendValueInput("color_")
+    this.appendValueInput("color")
         .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_UNIT)
         .appendField(Blockly.Msg.WEBDUINO_WS2812_LED_COLOR);
     this.setInputsInline(true);
