@@ -3,7 +3,7 @@
   "description": "WS2812 Module for Webduino",
   "main": "ws2812.js",
   "authors": "",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "arduino",
     "webduino",
