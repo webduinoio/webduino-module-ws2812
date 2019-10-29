@@ -64,12 +64,17 @@
             data = data.concat(toHex(led));
             data = data.concat(color.substring(1));
         }
-        for (var i = 0; i < data.length; i++) {
-            cmd.push(data.charCodeAt(i))
+        var dataLength = data.length
+        for (var i = 0; i < dataLength; i++) {
+            if(i%56 == 0){
+                cmd = [0xF0, 0x04, 0x21, 0x03];
+            }else if(i%56 == 55 || i == dataLength - 1){
+                cmd.push(0xF7);
+                this._board.send(cmd); 
+                this._board.flush();
+            }
+            cmd.push(data.charCodeAt(i));
         }
-        cmd.push(0xF7);
-        this._board.send(cmd);
-        this._board.flush();
     }
 
     proto.setColor64 = function(led, color) {
