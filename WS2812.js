@@ -57,7 +57,7 @@
             return;
         }
         var data = '';
-        var cmd = [0xF0, 0x04, 0x21, 0x03];
+        var cmd = [];
         if (arguments.length == 1) {
             data = led;
         } else {
@@ -66,14 +66,15 @@
         }
         var dataLength = data.length
         for (var i = 0; i < dataLength; i++) {
-            if(i%56 == 0){
+            if(i%56 == 0){ // less than firmata buffer 64 bytes
                 cmd = [0xF0, 0x04, 0x21, 0x03];
-            }else if(i%56 == 55 || i == dataLength - 1){
-                cmd.push(0xF7);
-                this._board.send(cmd); 
-                this._board.flush();
             }
             cmd.push(data.charCodeAt(i));
+            if(i%56 == 55 || i == dataLength - 1){
+                cmd.push(0xF7);
+                this._board.send(cmd);
+                this._board.flush();
+            }
         }
     }
 
